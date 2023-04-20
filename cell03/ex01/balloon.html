@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html style="   display: flex;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #balloon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="balloon" onclick="balloonEvolve(this)" onmouseout="balloonMouse(this)"></div>
+    <script>
+        function balloonEvolve(item) {
+            balloonGrow(item);
+            balloonColor(item);
+        }
+        function balloonGrow(item) {
+            if (item.offsetHeight < 420) {
+                item.style.height = item.offsetHeight + 10 + "px";
+                item.style.width = item.offsetWidth + 10 + "px";
+            }
+            else {
+                item.style.height = 200 + "px";
+                item.style.width = 200 + "px";
+            }
+        }
+        function balloonColor(item) {
+            if (item.style.backgroundColor == "red" || item.style.backgroundColor == "")
+                item.style.backgroundColor = "green"
+            else if (item.style.backgroundColor == "green")
+                item.style.backgroundColor = "blue"
+            else if (item.style.backgroundColor == "blue")
+                item.style.backgroundColor = "red"
+        }
+        function balloonMouse(item) {
+            if (item.offsetHeight >= 205) {
+                item.style.height = item.offsetHeight - 5 + "px";
+                item.style.width = item.offsetWidth - 5 + "px";
+            }
+            balloonColorReverse(item);
+        }
+        function balloonColorReverse(item) {
+            if (item.style.backgroundColor == "red" || item.style.backgroundColor == "")
+                item.style.backgroundColor = "blue"
+            else if (item.style.backgroundColor == "blue")
+                item.style.backgroundColor = "green"
+            else if (item.style.backgroundColor == "green")
+                item.style.backgroundColor = "red"
+        }
+    </script>
+</body>
+
+</html>

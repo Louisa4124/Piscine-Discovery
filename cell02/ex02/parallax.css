@@ -1,0 +1,47 @@
+body, html {
+    height: 100%;
+    margin:0%
+  }
+
+.parallax {
+    background-image: url("1.jpeg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax2 {
+    background-image: url("black.jpg");
+    height: 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax3 {
+    background-image: url("2.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text1, .text2, .text3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+    margin: 0%;
+    padding: 50%;
+    font-size: 200%;    
+}
+
+.text2 {
+    color: white;
+    padding: 25%;
+}
